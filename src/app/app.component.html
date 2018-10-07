@@ -1,15 +1,18 @@
 
 <div fxLayout="column">
+    <span>login</span>
     <div>
-        <input [(ngModel)]="model.title" placeholder="title">
+        <input [(ngModel)]="model.username" placeholder="username">
     </div>
     <div>
-        <textarea [(ngModel)]="model.description" placeholder="description"></textarea>
+        <textarea [(ngModel)]="model.password" placeholder="password"></textarea>
     </div>
-    <button (click)="post()">post</button>
+    <button (click)="login()">login</button>
+    <button (click)="signup()">signup</button>
 </div>
 <br>
 <div fxLayout="column">
+ 
     <div>
        title: {{model.title}}
     </div>

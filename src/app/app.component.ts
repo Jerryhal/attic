@@ -1,3 +1,5 @@
+import { User } from './user.model';
+import { AuthorizationService } from './authorization.service';
 import { ResourceService } from './resource.service';
 import { Story } from './story.model';
 import { HttpClient } from '@angular/common/http';
@@ -9,18 +11,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'attic';
-  public data;
-  public model: Story = {title: null, description: null};
-  public dataa;
+  public model: User = {username: null, password: null};
 
-  constructor(private resourceService: ResourceService) {}
+  constructor(private authorizationService: AuthorizationService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
+  public login() {
+    this.authorizationService.login({
+      username: this.model.username, 
+      password: this.model.password
+    });
+  }
 
-  public post() {
-    if (this.model.title !== null) {
-      this.resourceService.post(this.model);
-    }
+  public signup() {
+    this.authorizationService.signup({
+      username: this.model.username, 
+      password: this.model.password
+    });
   }
 }

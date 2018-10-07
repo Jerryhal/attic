@@ -1,5 +1,5 @@
 
-export function middleware() {
+ function middleware() {
     const express = require('express');
 
     const app = express();

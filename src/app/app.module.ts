@@ -1,3 +1,4 @@
+import { AuthorizationService } from './authorization.service';
 import { ResourceService } from './resource.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -14,7 +15,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [ResourceService],
+  providers: [ResourceService,AuthorizationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
