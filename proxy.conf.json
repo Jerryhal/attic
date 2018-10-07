@@ -1,0 +1,9 @@
+{
+    "/posts": {
+        "target": "http://localhost:8000",
+        "secure": true,
+        "pathRewrite": {
+            "^/url": ""
+        }
+    }
+}

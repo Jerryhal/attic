@@ -1,20 +1,47 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<div fxLayout="column">
+    <div>
+        <input [(ngModel)]="model.title" placeholder="title">
+    </div>
+    <div>
+        <textarea [(ngModel)]="model.description" placeholder="description"></textarea>
+    </div>
+    <button (click)="post()">post</button>
+</div>
+<br>
+<div fxLayout="column">
+    <div>
+       title: {{model.title}}
+    </div>
+    <div>
+        description: {{model.description}}
+    </div>
+</div>
+
+Projektityön sisältö Avoimet rajapinnat
+Syksy 2018
+Projektityö
+Tavoite
+Toteutetaan ”Avoimet rajapinnat” -kurssilla projektityönä jokin Rest-pohjainen avoin
+rajapinta Node.js:llä tai Laravelilla.
+Projektityön voi toteuttaa yksilösuorituksena tai 2-3:n opiskelijan ryhmätyönä. Rajapinta
+palauttaa tulokset pääsääntöisesti JSON-formaattina, mutta muitakin formaatteja voi tukea.
+Työssä tulee olla kaikki rajapinnan käyttämiseen tarpeelliset sovelluskerrokset:
+· tietokanta,
+· tiedon tarjoava julkinen rajapinta sekä
+· html-css-javascript-tekniikoita hyödyntävä käyttöliittymä, jolla tietoa voi tarkastella
+ja päivittää.
+Huomioitavia seikkoja
+Määritellyn rajapinnan rakenne tulee olla looginen ja käyttäjän kannalta mahdollisimman
+helppokäyttöinen ja ymmärrettävä. Tietoa tulee pystyä hakemaan eri kriteerien perusteella ja
+päivittämään rajapinnan kautta. Virhetilanteet ilmoitetaan pääsääntöisesti http-protokollan
+paluuarvojen perusteella. Katso suositus rajapinnan määrittelystä: http://www.kodeblog.com/10-rest-api-design-best-practices-that-will-make-developers-love-your-api/
+Validointi
+Kyselyjen muodot ja päivitettävät tiedot tulee validoida. Yksikkötestit ovat suotavia.
+Auktorisointi
+OAuth2 on auktorisointimenetelmä, jonka toteutus mahdollistaa julkisen RestApin käytön
+auktorisoidusti. Tämän konseptin selvittäminen ja käyttö projektissa lisää sen arvoa.
+Palautus
+Projekti palautetaan kurssin päättyessä PHPStorm-projektina, jossa on mukana lyhyt kuvaus
+toiminnallisuudesta ja ohjeet RestApin testaamisesta. Kurssin viimeisessä tapaamisessa
+tavoitteena on katselmoida toteutettuja projekteja.
