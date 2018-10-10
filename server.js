@@ -95,6 +95,27 @@ app.post("/signup", (req, res, next) => {
     });
 });
 
+
+app.get("/api/:title", (req, res, next) => {
+    MongoClient.connect(uri, function (err, client) {
+        if (err) {
+            console.log("connection failed");
+
+        } else if (client) {
+            console.log("Connected successfully to server");
+        }
+        let collection = client.db("test").collection("kokeet");
+
+        let query = req.params.title;
+
+        collection.find({ title: query }).toArray(function (err, docs) {
+            res.json(docs);
+        });
+
+        client.close();
+    });
+});
+
 app.get("/url", (req, res, next) => {
     MongoClient.connect(uri, function (err, client) {
         if (err) {
