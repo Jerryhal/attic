@@ -1,0 +1,22 @@
+MEAN-stackillä toteuttettu sanakirja web-sovellus. 
+
+*Api*
+
+"/api?title=<hakusana>" : tulostaa sanan, sen merkityksen ja ID:n
+"/all" : tulostaa kaikki tietokannan sanat, niiden merkitykset ja ID:t
+
+Front-endistä voi lisätä sanoja (/add).
+
+Data on muotoa {title: string, description: string}, johon MongoDb lisää oman Id
+
+
+*Validointi*
+
+Sanat leikataan yli 30 merkin jälkeen, ja niiden selitykset yli 255 merkin jälkeen.
+MongoDB:tä käytettäessä ei tarvitse huolehtia SQL-injektioista, tietokannan toiminnallisuuden vuoksi.
+
+
+*Käynnistäminen*
+
+" ng serve " käynnistää Front-end angular sovelluksen
+" node server.js " käynnistää back-end nodejs sovelluksen
