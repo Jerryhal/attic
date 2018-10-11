@@ -120,26 +120,6 @@ app.get("/api", (req, res, next) => {
     });
 });
 
-// app.get("/url", (req, res, next) => {
-//     MongoClient.connect(uri, function (err, client) {
-//         if (err) {
-//             console.log("connection failed");
-
-//         } else if (client) {
-//             console.log("Connected successfully to server");
-//         }
-//         let collection = client.db("test").collection("kokeet");
-
-//         let param = req.query.title;
-
-//         collection.findOne({ 'title': param }, (err, docs) => {
-//             res.json(docs);
-//         });
-
-//         client.close();
-//     });
-// });
-
 app.get("/all", (req, res, next) => {
     MongoClient.connect(uri, function (err, client) {
         if (err) {
@@ -150,7 +130,7 @@ app.get("/all", (req, res, next) => {
         }
         let collection = client.db("test").collection("kokeet");
 
-        collection.find((err, docs) => {
+        collection.find().toArray((err, docs) => {
             res.json(docs);
         });
         client.close();
