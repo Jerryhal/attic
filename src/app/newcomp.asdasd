@@ -1,0 +1,69 @@
+import { WordDefinition } from './wordDefinition.model';
+import { User } from './user.model';
+import { AuthorizationService } from './authorization.service';
+import { ResourceService } from './resource.service';
+import { Story } from './story.model';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent implements OnInit {
+  public model: User = {username: null, password: null};
+  public inputWord: string = "";
+
+  public wordDescription: string;
+  public addingWord = false;
+
+  public wordDefinition: WordDefinition = {title: null, description: null};
+
+  constructor(private resourceService: ResourceService, private authorizationService: AuthorizationService) {}
+
+  ngOnInit() {
+  }
+
+
+  public searchWord(){
+    console.log("searching word");
+    this.resourceService.get(this.inputWord).subscribe(result => {
+      this.wordDefinition = <WordDefinition>result;
+      console.log(this.wordDefinition);
+    });
+  }
+
+  public addWordDefinition(){
+    if (!this.addingWord) {
+      console.log("describe word");
+      this.addingWord = true;
+    }
+    if (this.wordDescription && this.wordDescription.length > 3) {
+      let param: WordDefinition = {
+        title: this.inputWord, 
+        description: this.wordDescription
+      };
+      this.resourceService.post(param).subscribe(result => {
+        console.log(result);
+      });
+      this.inputWord = null;
+      this.wordDescription = null;
+      this.addingWord = false;
+    }
+  }
+
+  public login() {
+    this.authorizationService.login({
+      username: this.model.username, 
+      password: this.model.password
+    });
+  }
+
+  public signup() {
+    this.authorizationService.signup({
+      username: this.model.username, 
+      password: this.model.password
+    });
+  }
+}

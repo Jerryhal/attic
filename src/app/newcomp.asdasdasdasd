@@ -1,28 +1,40 @@
-<!-- <div fxLayout="column">
-    <span>login</span>
-    <div>
-        <input [(ngModel)]="model.username" placeholder="username">
+<div>
+    <div fxLayout="column">
+        <span>login</span>
+        <div>
+            <input [(ngModel)]="model.username" placeholder="username">
+        </div>
+        <div>
+            <textarea [(ngModel)]="model.password" placeholder="password"></textarea>
+        </div>
+        <button (click)="login()">login</button>
+        <button (click)="signup()">signup</button>
     </div>
-    <div>
-        <textarea [(ngModel)]="model.password" placeholder="password"></textarea>
-    </div>
-    <button (click)="login()">login</button>
-    <button (click)="signup()">signup</button>
-</div> -->
+    <br>
+    <div fxLayout="column">
 
-{{status}}
+        <div>
+            title: {{model.title}}
+        </div>
+        <div>
+            description: {{model.description}}
+        </div>
+    </div>
+</div>
+
 <div>
     <input [(ngModel)]="inputWord">
     <button (click)="searchWord()">Search a word definition</button>
-    <button (click)="addWordDefinition()">{{buttonText}}</button>
-</div>
+    <button (click)="addWordDefinition()">Add a word definition</button>
     <textarea [(ngModel)]="wordDescription" *ngIf="addingWord" placeholder="describe word"></textarea>
+</div>
 <div>
-    <h3>{{wordDefinition.title}}</h3>
-    <p>{{wordDefinition.description}}</p>
+    <h3>{{word}}</h3>
+    <br>
+    <p>{{definition}}</p>
 </div>
 
-<!-- Projektityön sisältö Avoimet rajapinnat
+Projektityön sisältö Avoimet rajapinnat
 Syksy 2018
 Projektityö
 Tavoite
@@ -49,4 +61,4 @@ auktorisoidusti. Tämän konseptin selvittäminen ja käyttö projektissa lisä�
 Palautus
 Projekti palautetaan kurssin päättyessä PHPStorm-projektina, jossa on mukana lyhyt kuvaus
 toiminnallisuudesta ja ohjeet RestApin testaamisesta. Kurssin viimeisessä tapaamisessa
-tavoitteena on katselmoida toteutettuja projekteja. -->
+tavoitteena on katselmoida toteutettuja projekteja.
