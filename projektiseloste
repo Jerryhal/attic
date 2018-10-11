@@ -18,5 +18,8 @@ MongoDB:tä käytettäessä ei tarvitse huolehtia SQL-injektioista, tietokannan 
 
 *Käynnistäminen*
 
-" ng serve " käynnistää Front-end angular sovelluksen
+" ng serve " käynnistää Front-end angular sovelluksen.
+vakio porttina 4200
+
 " node server.js " käynnistää back-end nodejs sovelluksen
+vakio porttina 8000
