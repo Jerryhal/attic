@@ -23,9 +23,6 @@ let server = app.listen(8000, () => {
 const db = "test";
 let uri = "mongodb+srv://jerry:Kissakala@cluster0-gharm.mongodb.net/" + db;
 
-const accessToken = Math.random().toString(36);
-
-
 // app.get("/login", (req, res, next) => {
 //     MongoClient.connect(uri, function (err, client) {
 //         if (err) {
@@ -100,9 +97,6 @@ app.get("/api", (req, res, next) => {
             console.log("Connected successfully to server");
         }
         let collection = client.db("test").collection("kokeet");
-
-        console.log(req.query);
-
 
         let title = req.query.title;
 
