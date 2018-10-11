@@ -11,8 +11,8 @@ Data on muotoa {title: string, description: string}, johon MongoDb lisää oman 
 
 
 *Validointi*
-
-Sanat leikataan yli 30 merkin jälkeen, ja niiden selitykset yli 255 merkin jälkeen.
+Front-endissä käytetään tyypittelyä sanan määrityksissä. Tyhjiin ja null arvoihin ollaan myös varauduttu.
+Back-endissä sanat leikataan yli 30 merkin jälkeen, ja niiden selitykset yli 255 merkin jälkeen.
 MongoDB:tä käytettäessä ei tarvitse huolehtia SQL-injektioista, tietokannan toiminnallisuuden vuoksi.
 
 
